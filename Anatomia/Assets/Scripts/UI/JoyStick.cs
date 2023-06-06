@@ -11,6 +11,8 @@ namespace MisaVondoFPSMobile
 
         public Vector3 InputDirection;
 
+        public static bool isMoving = false;
+
         void Start()
         {
 
@@ -46,13 +48,13 @@ namespace MisaVondoFPSMobile
 
         public void OnPointerDown(PointerEventData ped)
         {
-
+            isMoving = true;
             OnDrag(ped);
         }
 
         public void OnPointerUp(PointerEventData ped)
         {
-
+            isMoving = false;
             InputDirection = Vector3.zero;
             joystick.rectTransform.anchoredPosition = Vector3.zero;
         }

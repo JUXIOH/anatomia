@@ -45,6 +45,22 @@ namespace MisaVondoFPSMobile
 
         void Update()
         {
+            if (isRunning == true && JoyStick.isMoving == true)
+            {
+                footstepsRun.enabled = true;
+                footstepsWalk.enabled = false;
+            }
+            else if (isRunning == false && JoyStick.isMoving == true)
+            {
+                footstepsWalk.enabled = true;
+                footstepsRun.enabled = false;
+            }
+            else
+            {
+                footstepsWalk.enabled = false;
+                footstepsRun.enabled = false;
+            }
+
             Vector3 forward = transform.TransformDirection(Vector3.forward);
             Vector3 right = transform.TransformDirection(Vector3.right);
             //bool isRunning = Input.GetKey(KeyCode.LeftShift);
@@ -60,19 +76,6 @@ namespace MisaVondoFPSMobile
             }
 
             characterController.Move(moveDirection * Time.deltaTime);
-
-            if (isRunning)
-            {
-                footstepsWalk.enabled = true;
-            }
-            else if (!isRunning){
-                footstepsRun.enabled = true;
-            }
-            else
-            {
-                footstepsWalk.enabled = false;
-                footstepsRun.enabled = false;
-            }
 
             if (canMove)
             {
