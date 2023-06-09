@@ -2,8 +2,6 @@
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 
-namespace MisaVondoFPSMobile
-{
     public class JoyStick : MonoBehaviour, IDragHandler, IPointerUpHandler, IPointerDownHandler
     {
         private Image jsContainer;
@@ -59,4 +57,3 @@ namespace MisaVondoFPSMobile
             joystick.rectTransform.anchoredPosition = Vector3.zero;
         }
     }
-}

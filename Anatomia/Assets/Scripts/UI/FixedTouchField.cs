@@ -2,8 +2,6 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 
 
-namespace MisaVondoFPSMobile
-{
     public class FixedTouchField : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
     {
         [HideInInspector]
@@ -50,4 +48,3 @@ namespace MisaVondoFPSMobile
         }
 
     }
-}

@@ -14,11 +14,12 @@ public class Doors : MonoBehaviour
 
 
     public bool inReach;
-    public bool isInteracted = false;
+    public bool isInteracted;
 
     void Start()
     {
         inReach = false;
+        isInteracted = false;
         interactBtn.onClick.AddListener(OnButtonClick);
     }
 
