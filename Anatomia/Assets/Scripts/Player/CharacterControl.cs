@@ -23,6 +23,7 @@ public class CharacterControl : MonoBehaviour
 
     [HideInInspector]
     public bool canMove = true;
+    [HideInInspector]
     public bool isRunning = false;
 
     [HideInInspector] public StaminaController _staminaController;
@@ -37,6 +38,11 @@ public class CharacterControl : MonoBehaviour
     public void SetRunSpeed(float Speed)
     {
         runningSpeed = Speed;
+    }
+
+    public void SetCanMove(bool value)
+    {
+        canMove = value;
     }
 
     public void OnButtonPressed()
