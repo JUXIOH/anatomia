@@ -58,4 +58,16 @@ public class volumeSettings : MonoBehaviour
         sfxText.text = (int)calculate + "%";
     }
 
+    public void muteToggle(bool muted)
+    {
+        if (muted)
+        {
+            AudioListener.volume = 0;
+        }
+        else
+        {
+            AudioListener.volume = 1;
+        }
+    }
+
 }

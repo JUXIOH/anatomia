@@ -19,6 +19,8 @@ public class ReadNotes : MonoBehaviour
     public bool inReach;
     public bool isInteracted;
 
+    private Outline outline;
+
 
 
     void Start()
@@ -43,7 +45,6 @@ public class ReadNotes : MonoBehaviour
         {
             inReach = true;
             pickUpText.SetActive(true);
-
         }
     }
 

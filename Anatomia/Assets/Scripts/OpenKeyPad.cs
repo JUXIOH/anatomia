@@ -13,6 +13,8 @@ public class OpenKeyPad : MonoBehaviour
     public bool inReach;
     public bool isInteracted;
 
+    private Outline outline;
+
 
     void Start()
     {
@@ -31,7 +33,6 @@ public class OpenKeyPad : MonoBehaviour
         {
             inReach = true;
             keypadText.SetActive(true);
-
         }
     }
 
@@ -41,12 +42,8 @@ public class OpenKeyPad : MonoBehaviour
         {
             inReach = false;
             keypadText.SetActive(false);
-
         }
     }
-
-
-
 
     void Update()
     {

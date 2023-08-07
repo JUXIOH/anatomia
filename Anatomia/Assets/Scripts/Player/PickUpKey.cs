@@ -8,6 +8,7 @@ public class PickUpKey : MonoBehaviour
     public GameObject keyOB;
     public GameObject invOB;
     public GameObject pickUpText;
+    public GameObject keyNameText;
     public AudioSource keySound;
     public Button interactBtn;
 
@@ -19,6 +20,7 @@ public class PickUpKey : MonoBehaviour
     {
         inReach = false;
         pickUpText.SetActive(false);
+        keyNameText.SetActive(false);
         invOB.SetActive(false);
         interactBtn.onClick.AddListener(OnButtonClick);
     }
@@ -35,6 +37,7 @@ public class PickUpKey : MonoBehaviour
         {
             inReach = true;
             pickUpText.SetActive(true);
+            keyNameText.SetActive(true);
 
         }
     }
@@ -45,7 +48,7 @@ public class PickUpKey : MonoBehaviour
         {
             inReach = false;
             pickUpText.SetActive(false);
-
+            keyNameText.SetActive(false);
         }
     }
 
@@ -58,6 +61,7 @@ public class PickUpKey : MonoBehaviour
             keySound.Play();
             invOB.SetActive(true);
             pickUpText.SetActive(false);
+            keyNameText.SetActive(false);
         }
 
         isInteracted = false;

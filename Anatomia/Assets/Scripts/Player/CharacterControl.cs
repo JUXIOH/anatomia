@@ -12,6 +12,17 @@ public class CharacterControl : MonoBehaviour
     public AudioSource footstepsWalk;
     public AudioSource footstepsRun;
 
+    public GameObject userOne;
+    public GameObject userTwo;
+    public GameObject userThree;
+
+    private PlayerOne user1;
+    private PlayerTwo user2;
+    private PlayerThree user3;
+    private SelectedPlayer userSelected;
+
+    private int CurrentUserSlot;
+
     [HideInInspector]
     public Vector2 RunAxis;
     [HideInInspector]
@@ -28,11 +39,36 @@ public class CharacterControl : MonoBehaviour
 
     [HideInInspector] public StaminaController _staminaController;
 
+    private int ID;
+    private string Name;
+
 
     void Start()
     {
         _staminaController = GetComponent<StaminaController>();
         characterController = GetComponent<CharacterController>();
+    }
+
+    private void Awake()
+    {
+        CurrentUserSlot = PlayerPrefs.GetInt("UserLoaded");
+        checkUser();
+    }
+
+    void checkUser()
+    {
+        switch (CurrentUserSlot)
+        {
+            case 1:
+                userOne.SetActive(true);
+                break;
+            case 2:
+                userTwo.SetActive(true);
+                break;
+            case 3:
+                userThree.SetActive(true);
+                break;
+        }
     }
 
     public void SetRunSpeed(float Speed)

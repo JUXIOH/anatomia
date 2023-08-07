@@ -4,9 +4,12 @@ using UnityEngine;
 
 public class PlayerOne : MonoBehaviour
 {
+    public int testSubjectID = 0;
     public bool emptySlot = true;
     public string username = "N/A";
     public bool tutorialLevel = false;
+    public int currency = 0;
+    public int maxSanity = 3;
 
     public void Awake()
     {
@@ -22,8 +25,11 @@ public class PlayerOne : MonoBehaviour
     {
         PlayerOneData data = SaveSystem.LoadPlayerOne();
 
+        testSubjectID = data.testSubjectID;
         emptySlot = data.emptySlot;
         username = data.username;
         tutorialLevel = data.tutorialLevel;
+        currency = data.currency;
+        maxSanity = data.maxSanity;
     }
 }
